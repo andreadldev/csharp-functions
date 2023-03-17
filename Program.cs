@@ -10,6 +10,27 @@ int[] numeriAlQuadrato = ElevaArrayAlQuadrato(numeri);
 Console.WriteLine("\nArray numeri elevati al quadrato:");
 StampaArray(numeriAlQuadrato);
 
+Console.WriteLine("\n\n==================================");
+Console.WriteLine("\nCREAZIONE ARRAY PERSONALIZZATO");
+Console.WriteLine("Quanti elementi deve avere l'array? (Puoi inserire solo numeri da 1 a 10)");
+int length = Convert.ToInt32(Console.ReadLine());
+while (length < 1 || length > 10)
+{
+    Console.WriteLine("Input non valido. Il numero deve essere compreso tra 1 e 10");
+    length = Convert.ToInt32(Console.ReadLine());
+}
+
+int[] customArray = new int[length];
+for (int i = 0; i < customArray.Length; i++)
+{
+    Console.WriteLine("Scegli un numero da inserire nell'array");
+    int num = Convert.ToInt32(Console.ReadLine());
+    customArray[i] = num;
+};
+
+Console.WriteLine("Array con i numeri inseriti:");
+StampaArray(customArray);
+
 //Funzioni
 void StampaArray(int[] array)
 {
