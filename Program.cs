@@ -2,6 +2,8 @@
 int[] numbers = { 2, 6, 7, 5, 3, 9 };
 StampaArray(numbers);
 
+Console.WriteLine("\n"+Quadrato(8));
+
 void StampaArray(int[] array)
 {
     Console.Write("[");
@@ -14,4 +16,10 @@ void StampaArray(int[] array)
 		}
 	}
     Console.Write("]");
+}
+
+int Quadrato(int number)
+{
+	int square = number * number;
+	return square;
 }
