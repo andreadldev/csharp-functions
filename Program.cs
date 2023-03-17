@@ -13,8 +13,10 @@ StampaArray(numeriAlQuadrato);
 //================================BONUS================================
 Console.WriteLine("\n\n==================================");
 Console.WriteLine("\nCREAZIONE ARRAY PERSONALIZZATO");
+
 Console.WriteLine("Quanti elementi deve avere l'array? (Puoi inserire solo numeri da 1 a 10)");
 int length = Convert.ToInt32(Console.ReadLine());
+
 while (length < 1 || length > 10)
 {
     Console.WriteLine("Input non valido. Il numero deve essere compreso tra 1 e 10");
@@ -25,8 +27,18 @@ int[] customArray = new int[length];
 for (int i = 0; i < customArray.Length; i++)
 {
     Console.WriteLine("Scegli un numero da inserire nell'array");
-    int num = Convert.ToInt32(Console.ReadLine());
-    customArray[i] = num;
+	string insertNumber = Console.ReadLine();
+    int aNumber;
+
+	while (!Int32.TryParse(insertNumber, out aNumber))
+	{
+        Console.WriteLine("Input non valido, riprova");
+        insertNumber = Console.ReadLine();
+		continue;
+    }
+		int intValue;
+		bool check = int.TryParse(insertNumber, out intValue);
+		customArray[i] = intValue;
 };
 
 Console.WriteLine("Array con i numeri inseriti:");
