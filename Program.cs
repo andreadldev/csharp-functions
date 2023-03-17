@@ -10,6 +10,7 @@ int[] numeriAlQuadrato = ElevaArrayAlQuadrato(numeri);
 Console.WriteLine("\nArray numeri elevati al quadrato:");
 StampaArray(numeriAlQuadrato);
 
+//================================BONUS================================
 Console.WriteLine("\n\n==================================");
 Console.WriteLine("\nCREAZIONE ARRAY PERSONALIZZATO");
 Console.WriteLine("Quanti elementi deve avere l'array? (Puoi inserire solo numeri da 1 a 10)");
@@ -31,7 +32,14 @@ for (int i = 0; i < customArray.Length; i++)
 Console.WriteLine("Array con i numeri inseriti:");
 StampaArray(customArray);
 
-//Funzioni
+int numeriSommati2 = sommaElementiArray(customArray);
+Console.WriteLine($"\n\nSomma Array numeri inseriti: {numeriSommati2}");
+
+int[] numeriAlQuadrato2 = ElevaArrayAlQuadrato(customArray);
+Console.WriteLine("\nArray numeri inseriti elevati al quadrato:");
+StampaArray(numeriAlQuadrato2);
+
+//=============================FUNZIONI===============================
 void StampaArray(int[] array)
 {
     Console.Write("[");
