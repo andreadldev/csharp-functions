@@ -1,9 +1,13 @@
 ﻿using System;
-int[] numbers = { 2, 6, 7, 5, 3, 9 };
-StampaArray(numbers);
+int[] numeri = { 2, 6, 7, 5, 3, 9 };
+Console.WriteLine("Lista numeri:");
+StampaArray(numeri);
 
-Console.WriteLine("\n"+Quadrato(8));
+int[] numeriAlQuadrato = ElevaArrayAlQuadrato(numeri);
+Console.WriteLine("\n\nLista numeri elevati al quadrato:");
+StampaArray(numeriAlQuadrato);
 
+//Funzioni
 void StampaArray(int[] array)
 {
     Console.Write("[");
@@ -22,4 +26,14 @@ int Quadrato(int number)
 {
 	int square = number * number;
 	return square;
+}
+
+int[] ElevaArrayAlQuadrato(int[] array)
+{
+	int[] newArray = array;
+	for (int i = 0; i < newArray.Length; i++)
+	{
+		newArray[i] = Quadrato(newArray[i]);
+	}
+	return newArray;
 }
